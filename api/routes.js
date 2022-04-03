@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const { StatusCodes } = require("http-status-codes");
 const errorHandler = require("../middlewares/error-handler");
-const userRouter = require("./user/router");
+const userRouter = require("./auth/router");
 
-router.use("/users", userRouter);
+router.use("/auth", userRouter);
 
 // handle error thrown by api
 router.use(errorHandler);
