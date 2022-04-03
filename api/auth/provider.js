@@ -14,7 +14,9 @@ const checkUsernameAvailable = async (username) => {
 
 const generateToken = async (username) => {
   // create token
-  const token = JWT.sign({ username: username }, JWT_SECRET);
+  const token = JWT.sign({ username: username }, JWT_SECRET, {
+    expiresIn: "7d",
+  });
 
   return token;
 };

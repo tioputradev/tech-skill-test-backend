@@ -21,7 +21,9 @@ mongoose
     console.log(`connected to database ${conn.connection.name}`);
   })
   .catch((err) => {
+    console.error("failed when trying to connect to database");
     console.error(err);
+    process.exit(1);
   });
 
 // assign root router
